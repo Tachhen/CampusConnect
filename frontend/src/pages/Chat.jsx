@@ -14,7 +14,7 @@ function Chat() {
 
     useEffect(() => {
         const client = new Client({
-            brokerURL: "wss://campusconnect-m40y.onrender.com/ws",
+            brokerURL: "wss://campusconnect-m40y.onrender.com/chat",
             reconnectDelay: 5000,
 
             onConnect: () => {
