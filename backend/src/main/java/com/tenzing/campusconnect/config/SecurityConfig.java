@@ -50,7 +50,7 @@ public class SecurityConfig {
         configuration.setAllowedOrigins(
                 List.of(
                         "http://localhost:5173",
-                        "https://campus-connect-mu-dusky.vercel.app"
+                        "https://campus-connect-kjwrybpgy-tachhen1.vercel.app"
                 )
         );
 

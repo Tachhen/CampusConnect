@@ -63,7 +63,7 @@ public class AuthService {
         return new JwtResponse(
                 token,
                 user.getRole().name(),
-                user.getName()      // <-- sends username to frontend
+                user.getName()     
         );
     }
 }
