@@ -26,19 +26,14 @@ function Login() {
 
             console.log("LOGIN RESPONSE:", response.data);
 
+            // Store authentication information
             localStorage.setItem("token", response.data.token);
             localStorage.setItem("role", response.data.role);
             localStorage.setItem("username", response.data.username);
 
-            if (response.data.role === "MENTOR") {
-                navigate("/mentor");
-            } else if (response.data.role === "STUDENT") {
-                navigate("/student");
-            } else if (response.data.role === "ADMIN") {
-                navigate("/admin");
-            } else {
-                navigate("/sessions");
-            }
+            // Everyone goes directly to chat after login
+            navigate("/chat");
+
         } catch (err) {
             console.error("LOGIN ERROR:", err);
             console.error("RESPONSE:", err.response);
@@ -48,6 +43,7 @@ function Login() {
                 err.response?.data ||
                 "Invalid email or password"
             );
+
         } finally {
             setIsLoading(false);
         }
